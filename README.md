@@ -14,6 +14,6 @@ Thành viên | Nhiệm vụ
 ----------- | ---------
 Đặng Lâm San | Hoàn thành use case khóa xe, trả xe (kèm biểu đồ hoạt động). Các yêu cầu phi chức năng
 Dương Hồng Sơn | Hoàn thành use case thuê xe, đặt cọc, chuyển mã vạch (kèm biểu đồ hoạt động).
-Nguyễn Mai Phương | Các use case xem thông tin xe, bãi xe, ..,  biểu đồ use case tổng quan
+Nguyễn Mai Phương | Hoàn thành các use case xem thông tin xe, bãi xe, xe đang thuê ...,  biểu đồ use case tổng quan
 
 ## Revisions
