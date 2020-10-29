@@ -18,3 +18,18 @@ Dương Hồng Sơn | Hoàn thành use case thuê xe, đặt cọc, chuyển mã
 Nguyễn Mai Phương | Hoàn thành các use case xem thông tin xe, bãi xe, xe đang thuê ...,  biểu đồ use case tổng quan
 
 ## Revisions
+
+# Lab 01 - Architectural Design
+
+Hoàn thành thiết kế kiến trúc
+
+1. Biểu đồ trình tự
+2. Biểu đồ phân tích lớp
+
+## Contributions
+
+Thành viên | Nhiệm vụ
+----------- | ---------
+Đặng Lâm San | Hoàn thành  khóa xe, trả xe, chuyển mã vạch
+Dương Hồng Sơn | ...
+Nguyễn Mai Phương | Hoàn thành xem thông tin xe, bãi xe, xe đang thuê
