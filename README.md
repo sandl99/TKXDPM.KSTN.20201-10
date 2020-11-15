@@ -33,3 +33,9 @@ Thành viên | Nhiệm vụ
 Đặng Lâm San | Hoàn thành  khóa xe, trả xe, chuyển mã vạch
 Dương Hồng Sơn | ...
 Nguyễn Mai Phương | Hoàn thành xem thông tin xe, bãi xe, xe đang thuê
+
+# Lab 02 - Design
+
+Hoàn thành thiết kế
+1. Thiết kế giao diện
+
