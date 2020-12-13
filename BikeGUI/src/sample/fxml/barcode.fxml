@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="531.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="531.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BarcodeController">
    <children>
-      <Label alignment="CENTER" layoutX="82.0" prefHeight="53.0" prefWidth="392.0" text="Please full up the barcode to continue !">
+      <Label alignment="CENTER" layoutX="62.0" prefHeight="53.0" prefWidth="408.0" text="Please full up the barcode to continue !">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -18,7 +18,7 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <Button layoutX="207.0" layoutY="133.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="141.0" style="-fx-background-color: #fff; -fx-border-radius: 20; -fx-border-color: #703D57;" text="Comfirm">
+      <Button layoutX="207.0" layoutY="133.0" mnemonicParsing="false" onAction="#confirmButtonClicked" prefHeight="43.0" prefWidth="141.0" style="-fx-background-color: #fff; -fx-border-radius: 20; -fx-border-color: #703D57;" text="Comfirm">
          <font>
             <Font size="15.0" />
          </font>

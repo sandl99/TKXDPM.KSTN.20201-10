@@ -5,28 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
-    private double x, y;
-
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/bike_list.fxml"));
-        primaryStage.setScene(new Scene(root));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/home_screen.fxml"));
+        Scene homeScreenScene = new Scene(root);
+        primaryStage.setScene(homeScreenScene);
 
-//        primaryStage.initStyle(StageStyle.UNDECORATED);
-
-        root.setOnMousePressed(mouseEvent -> {
-            x = mouseEvent.getSceneX();
-            y = mouseEvent.getSceneY();
-        });
-
-        root.setOnMouseDragged(mouseEvent -> {
-            primaryStage.setX(mouseEvent.getSceneX() - x);
-            primaryStage.setY(mouseEvent.getSceneY() - y);
-        });
         primaryStage.show();
     }
 

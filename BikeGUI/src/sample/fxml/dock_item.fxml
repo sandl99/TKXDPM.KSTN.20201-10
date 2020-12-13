@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DockItemController">
    <children>
       <Pane prefHeight="0.0" prefWidth="0.0">
          <children>
@@ -37,7 +36,7 @@
       </Label>
       <Pane prefHeight="66.0" prefWidth="84.0">
          <children>
-            <Button layoutX="8.0" layoutY="6.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="67.0" style="-fx-background-color: #fff; -fx-border-color: #2A73ff; -fx-border-radius: 20; -fx-cursor: #2A73ff;" text="Open" />
+            <Button fx:id="openButton" layoutX="8.0" layoutY="6.0" mnemonicParsing="false" onAction="#openButtonClicked" prefHeight="38.0" prefWidth="67.0" style="-fx-background-color: #fff; -fx-border-color: #2A73ff; -fx-border-radius: 20; -fx-cursor: #2A73ff;" text="Open" />
          </children>
       </Pane>
    </children>
