@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeScreen">
    <cursor>
       <Cursor fx:constant="DEFAULT" />
    </cursor>
@@ -76,7 +76,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="48.0" layoutY="97.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="391.0" style="-fx-effect: #e6dfdf;" text="View Dock List">
+            <Button fx:id="view_dock_list" layoutX="48.0" layoutY="97.0" mnemonicParsing="false" onAction="#handleViewDockList" prefHeight="90.0" prefWidth="391.0" style="-fx-effect: #e6dfdf;" text="View Dock List">
                <font>
                   <Font name="Broadway" size="20.0" />
                </font>

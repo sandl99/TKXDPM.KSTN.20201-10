@@ -7,13 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.concurrent.TimeUnit;
+
 public class Main extends Application {
 
     private double x, y;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/bike_list.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/home_screen.fxml"));
         primaryStage.setScene(new Scene(root));
 
 //        primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -28,6 +30,15 @@ public class Main extends Application {
             primaryStage.setY(mouseEvent.getSceneY() - y);
         });
         primaryStage.show();
+//        try {
+//            TimeUnit.SECONDS.sleep(3);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        root = FXMLLoader.load(getClass().getResource("fxml/home_screen.fxml"));
+//        Scene scene = new Scene(root);
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
     }
 
 
