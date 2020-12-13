@@ -127,12 +127,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="48.0" layoutY="97.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="391.0" style="-fx-effect: #e6dfdf;" text="Choose a random dock">
+            <Button fx:id="chooseARandomDockButton" layoutX="48.0" layoutY="97.0" mnemonicParsing="false" onAction="#chooseARandomDockButtonClicked" prefHeight="90.0" prefWidth="391.0" style="-fx-effect: #e6dfdf;" text="Choose a random dock">
                <font>
                   <Font name="Broadway" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="backButon" layoutX="441.0" layoutY="97.0" mnemonicParsing="false" onAction="#backButonClicked" prefHeight="90.0" prefWidth="381.0" style="-fx-cursor: #e6dfdf;" text="Back">
+            <Button fx:id="backButton" layoutX="441.0" layoutY="97.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="90.0" prefWidth="381.0" style="-fx-cursor: #e6dfdf;" text="Back">
                <font>
                   <Font name="Broadway" size="22.0" />
                </font>

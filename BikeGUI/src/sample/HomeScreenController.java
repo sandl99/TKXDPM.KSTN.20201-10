@@ -33,6 +33,14 @@ public class HomeScreenController implements  Initializable {
 	
 	public void viewRentingBikeButtonClicked(ActionEvent event)  throws IOException
 	{
-		
+		/***
+		 * Neu dang thue xe
+		 */
+		Parent root = FXMLLoader.load(getClass().getResource("fxml/renting_detail.fxml"));
+        Scene rentingDetailScene = new Scene(root);
+
+        Stage newStage = new Stage();
+        newStage.setScene(rentingDetailScene);
+        newStage.show();
 	}
 }
