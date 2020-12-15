@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DockList">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DockList">
    <cursor>
       <Cursor fx:constant="DEFAULT" />
    </cursor>
@@ -127,12 +127,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="48.0" layoutY="97.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="391.0" style="-fx-effect: #e6dfdf;" text="Choose a random dock">
+            <Button fx:id="chooseARandomDockButton" layoutX="48.0" layoutY="97.0" mnemonicParsing="false" onAction="#chooseARandomDockButtonClicked" prefHeight="90.0" prefWidth="391.0" style="-fx-effect: #e6dfdf;" text="Choose a random dock">
                <font>
                   <Font name="Broadway" size="20.0" />
                </font>
             </Button>
-            <Button layoutX="441.0" layoutY="97.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="381.0" style="-fx-cursor: #e6dfdf;" text="Back">
+            <Button fx:id="backButton" layoutX="441.0" layoutY="97.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="90.0" prefWidth="381.0" style="-fx-cursor: #e6dfdf;" text="Back">
                <font>
                   <Font name="Broadway" size="22.0" />
                </font>

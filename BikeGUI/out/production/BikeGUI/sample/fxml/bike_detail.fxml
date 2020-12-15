@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BikeDetailController">
    <children>
       <Label alignment="CENTER" prefHeight="50.0" prefWidth="511.0" style="-fx-background-color: #b5b4b2;" text="BIKE  DETAIL">
          <font>
@@ -18,7 +17,7 @@
       <Separator layoutX="142.0" layoutY="50.0" orientation="VERTICAL" prefHeight="235.0" prefWidth="0.0" />
       <Pane layoutY="283.0" prefHeight="59.0" prefWidth="511.0">
          <children>
-            <Button layoutX="188.0" layoutY="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #fff; -fx-border-color: #2A73ff; -fx-border-radius: 20; -fx-cursor: #2A73;" text="Close">
+            <Button layoutX="188.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeButtonClicked" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #fff; -fx-border-color: #2A73ff; -fx-border-radius: 20; -fx-cursor: #2A73;" text="Close">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BikeFormRentingController">
    <children>
       <Label alignment="CENTER" prefHeight="52.0" prefWidth="511.0" style="-fx-background-color: #b5b4b2;" text="BIKE  FORM  RENTING">
          <font>
@@ -66,7 +65,7 @@
             </Label>
          </children>
       </VBox>
-      <Button layoutX="188.0" layoutY="286.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #fff; -fx-border-color: #2A73ff; -fx-border-radius: 20; -fx-cursor: #2A73;" text="Cornfirm">
+      <Button layoutX="188.0" layoutY="286.0" mnemonicParsing="false" onAction="#confirmButtonClicked" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #fff; -fx-border-color: #2A73ff; -fx-border-radius: 20; -fx-cursor: #2A73;" text="Cornfirm">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

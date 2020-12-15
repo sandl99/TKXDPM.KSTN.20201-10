@@ -1,14 +1,24 @@
 package sample;
 
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+
 import java.net.URL;
+
 import java.util.ResourceBundle;
+import java.util.Random;
 
 public class DockList implements Initializable {
 
@@ -28,4 +38,36 @@ public class DockList implements Initializable {
             }
         }
     }
+    
+    public void backButtonClicked(ActionEvent event)  throws IOException
+	{
+		Parent root = FXMLLoader.load(getClass().getResource("fxml/home_screen.fxml"));
+		Scene homeScreenScene = new Scene(root);
+        
+        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        primaryStage.setScene(homeScreenScene);
+        primaryStage.show();
+	}
+    
+    public void chooseARandomDockButtonClicked(ActionEvent event)  throws IOException
+	{
+    	Random generator = new Random();
+    	ObservableList<Node> dockItems = dock_item.getChildren();
+    	
+    	int randDock = generator.nextInt();
+    	
+    	/***
+    	 * truyen dock
+    	 */
+    	Parent root = FXMLLoader.load(getClass().getResource("fxml/bike_list.fxml"));
+        Scene bikeListScene = new Scene(root);
+        
+        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        primaryStage.setScene(bikeListScene);
+        primaryStage.show();
+	}
+    
+    
 }
