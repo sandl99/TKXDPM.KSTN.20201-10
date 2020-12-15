@@ -1,4 +1,4 @@
-package mysqlDao;
+package entity.mysqlDao;
 
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -7,11 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import dao.DAO;
+import database.DAO;
 import database.MySQLDriver;
 import entity.Transaction;
-
-import javax.xml.transform.Result;
 
 public class TransactionDao implements DAO<Transaction> {
 	List<Transaction> transactions = new ArrayList<>();

@@ -1,15 +1,12 @@
-package mysqlDao;
+package entity.mysqlDao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import com.mysql.cj.log.Log;
-import dao.DAO;
+import database.DAO;
 import database.MySQLDriver;
-import entity.Transaction;
 import entity.User;
 import log.LogManager;
 

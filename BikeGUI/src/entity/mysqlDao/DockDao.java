@@ -1,11 +1,11 @@
-package mysqlDao;
+package entity.mysqlDao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.DAO;
+import database.DAO;
 import database.MySQLDriver;
 import entity.Dock;
 import log.LogManager;

@@ -1,4 +1,4 @@
-package dao;
+package database;
 
 import java.util.List;
 import java.util.Optional;
