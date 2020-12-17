@@ -36,51 +36,51 @@ public class BikeList implements Initializable {
                 e.printStackTrace();
             }
         }
-        
+
         listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
-    
+
     /**
      * Rent a bike, if choose one -> alert box confirm yes/no, if no choice -> announ 
      * @param event
      * @throws IOException
      */
     public void rentABikeButtonClicked(ActionEvent event)  throws IOException
-	{
+    {
 //    	String selectedItem = listView.getSelectionModel().getSelectedItem();
 //        int index = listView.getSelectionModel().getSelectedIndex();
-    	Node bikeChosen = (Node)listView.getSelectionModel().getSelectedItem();  
-    	if(bikeChosen != null)
-    	{
-    		Parent root = FXMLLoader.load(getClass().getResource("fxml/bike_form_renting.fxml"));
+        Node bikeChosen = (Node)listView.getSelectionModel().getSelectedItem();
+        if(bikeChosen != null)
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/bike_form_renting.fxml"));
             Scene bikeFormRentingScene = new Scene(root);
-            
+
             Stage newStage = new Stage();
-            
+
             // Truyen bike vao
             newStage.setScene(bikeFormRentingScene);
             newStage.show();
-    	} else
-    	{
-    		Parent root = FXMLLoader.load(getClass().getResource("fxml/barcode.fxml"));
+        } else
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/barcode.fxml"));
             Scene barcodeScene = new Scene(root);
-            
+
             Stage newStage = new Stage();
-            
+
             // Truyen bike vao
             newStage.setScene(barcodeScene);
             newStage.show();
-    	}
-	}
-    
+        }
+    }
+
     public void backButtonClicked(ActionEvent event)  throws IOException
-	{
-		Parent root = FXMLLoader.load(getClass().getResource("fxml/dock_list.fxml"));
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/dock_list.fxml"));
         Scene dockListScene = new Scene(root);
-        
+
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
+
         primaryStage.setScene(dockListScene);
         primaryStage.show();
-	}
+    }
 }
