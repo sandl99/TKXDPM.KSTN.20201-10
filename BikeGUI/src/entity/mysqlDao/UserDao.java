@@ -40,7 +40,7 @@ public class UserDao implements DAO<User> {
 	@Override
 	public List<User> getAll() {
 		users.clear();
-		c
+		String query = "SELECT * From rent_bike.user";
 		ResultSet res = mySQLDriver.query(query);
 		try {
 			while (res.next()) {

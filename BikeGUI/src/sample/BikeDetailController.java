@@ -19,7 +19,6 @@ public class BikeDetailController implements Initializable {
     public void closeButtonClicked(ActionEvent event)  throws IOException
 	{
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
         primaryStage.close();
 	}
 }
