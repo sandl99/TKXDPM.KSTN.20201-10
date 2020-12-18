@@ -59,10 +59,9 @@ public class Card {
 
     public static Card getInstance() {
         if (card == null) {
-            return new Card("118131_group10_2020", "Group 10", "312", "1125");
-        } else {
-            return card;
+            card = new Card("118131_group10_2020", "Group 10", "312", "1125");
         }
+        return card;
     }
 
     public boolean equals(String id) {

@@ -1,5 +1,8 @@
 package sample;
 
+import controller.DockInfoController;
+import controller.DockListController;
+import entity.Dock;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
@@ -17,28 +20,41 @@ import java.io.IOException;
 
 import java.net.URL;
 
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Random;
 
-public class DockList implements Initializable {
+public class DockListBoundary implements Initializable {
 
     @FXML // fx:id="dock_item"
     private VBox dock_item; // Value injected by FXMLLoader
 
+    DockListController dockListController;
+    DockInfoController dockInfoController;
+
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle) {
-        Node[] node = new Node[18];
+        dockListController = new DockListController();
 
+        List<Dock> docks = dockListController.getDocks();
+        Node[] node = new Node[docks.size()];
+//        System.out.println(docks == null);
         for (int i = 0; i < node.length; i++) {
             try {
-                node[i] = (Node) FXMLLoader.load(getClass().getResource("fxml/dock_item.fxml"));
+                dockInfoController = new DockInfoController(docks.get(i));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/dock_item.fxml"));
+                int numBike = dockInfoController.getNumBike();
+                DockItemBoundary dockItemBoundary = new DockItemBoundary(docks.get(i), numBike, dockInfoController);
+                fxmlLoader.setController(dockItemBoundary);
+                node[i] = (Node) fxmlLoader.load();
+//                node[i] = (Node) FXMLLoader.load(getClass().getResource("fxml/dock_item.fxml"));
                 dock_item.getChildren().add(node[i]);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
-    
+    @FXML
     public void backButtonClicked(ActionEvent event)  throws IOException
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("fxml/home_screen.fxml"));
@@ -49,7 +65,7 @@ public class DockList implements Initializable {
         primaryStage.setScene(homeScreenScene);
         primaryStage.show();
 	}
-    
+    @FXML
     public void chooseARandomDockButtonClicked(ActionEvent event)  throws IOException
 	{
     	Random generator = new Random();

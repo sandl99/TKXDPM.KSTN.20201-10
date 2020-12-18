@@ -28,8 +28,8 @@ public class TransactionDao implements DAO<Transaction> {
 		transaction.setUserId(res.getInt(++i));
 		transaction.setStatus(res.getInt(++i));
 		transaction.setTotal(res.getInt(++i));
-		transaction.setDate(res.getDate(++i));
-		
+		transaction.setDate(res.getDate(++i).toString());
+		transaction.setTotalTime(res.getInt(++i));
 		return transaction;
 	}
 
@@ -57,7 +57,7 @@ public class TransactionDao implements DAO<Transaction> {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return transactions;
 	}
 
 	@Override
@@ -73,13 +73,13 @@ public class TransactionDao implements DAO<Transaction> {
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return transaction;
 	}
 
 	@Override
 	public void save(Transaction t) {
-		String insertQuery = "INSERT INTO rent_bike.transaction (bikeId, userId, status, total, date) VALUES ('";
-		insertQuery = insertQuery + t.getBikeId() + "','" + t.getUserId() + "','" + t.getStatus() + "','" + t.getTotal() + "','" + t.getDate().toString() + "')";
+		String insertQuery = "INSERT INTO rent_bike.transaction (bikeId, userId, status, total, date, time) VALUES ('";
+		insertQuery = insertQuery + t.getBikeId() + "','" + t.getUserId() + "','" + t.getStatus() + "','" + t.getTotal() + "','" + t.getDate().toString() + "','" + t.getTotalTime() + "')";
 		log.info(insertQuery);
 		mySQLDriver.insert(insertQuery);
 	}
@@ -98,7 +98,7 @@ public class TransactionDao implements DAO<Transaction> {
 
 	public static void main(String[] args) {
 		System.out.println(Date.valueOf("1999-01-12").toString());
-		Transaction t = new Transaction(0, 0, 1, 120, Date.valueOf("1999-01-12"));
+		Transaction t = new Transaction(0, 0, 1, 120, Date.valueOf("1999-01-12").toString());
 		TransactionDao transactionDao = new TransactionDao();
 		transactionDao.save(t);
 	}

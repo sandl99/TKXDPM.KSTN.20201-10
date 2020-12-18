@@ -11,8 +11,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import subsystem.barcodesubsystem.BarcodeSubsystem;
 
-public class BikeFormRentingController implements Initializable {
+public class BarcodeBoundary implements Initializable {
+
+    BarcodeSubsystem barcodeSubsystem;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -21,6 +25,9 @@ public class BikeFormRentingController implements Initializable {
     
     public void confirmButtonClicked(ActionEvent event)  throws IOException
 	{
+    	/***
+    	 * kiem tra neu xe thuoc bai xe hien tai
+    	 */
     	Parent root = FXMLLoader.load(getClass().getResource("fxml/Alert.fxml"));
         Scene alertScene = new Scene(root);
         

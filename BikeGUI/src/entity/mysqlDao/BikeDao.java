@@ -24,7 +24,7 @@ public class BikeDao implements DAO<Bike>{
 		bike.setId(res.getInt(++i));
 		bike.setType(res.getInt(++i));
 		bike.setPin(res.getInt(++i));
-		bike.setDeposit(res.getInt(++i));
+//		bike.setDeposit(res.getInt(++i));
 		bike.setValue(res.getInt(++i));
 		bike.setDockId(res.getInt(++i));
 		bike.setBarcode(res.getNString(++i));
@@ -84,6 +84,22 @@ public class BikeDao implements DAO<Bike>{
 		return bike;
 	}
 
+	public List<Bike> getByDockId(int id) {
+		List<Bike> _bikes = new ArrayList<>();
+		String query = "SELECT * FROM rent_bike.bike WHERE bike.dockId=" + id;
+		LogManager.log.info(query);
+		ResultSet res = mySQLDriver.query(query);
+		try {
+			while (res.next()) {
+				Bike bike = this.extractBike(res);
+				_bikes.add(bike);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return _bikes;
+	}
+
 	@Override
 	public void save(Bike t) {
 		// TODO Auto-generated method stub
@@ -92,8 +108,9 @@ public class BikeDao implements DAO<Bike>{
 
 	@Override
 	public void update(Bike t) {
-		// TODO Auto-generated method stub
-		
+		String query = "UPDATE `rent_bike`.`bike` SET `dockId` = '" + t.getDockId() + "' WHERE (`id` = '" + t.getId() + "')";
+		LogManager.log.info(query);
+		mySQLDriver.update(query);
 	}
 
 	@Override

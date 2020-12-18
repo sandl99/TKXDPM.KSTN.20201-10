@@ -50,7 +50,7 @@ public class DockDao implements DAO<Dock> {
 		} catch (SQLException e){
 			e.printStackTrace();
 		}
-		return null;
+		return docks;
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public class DockDao implements DAO<Dock> {
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return dock;
 	}
 
 	@Override

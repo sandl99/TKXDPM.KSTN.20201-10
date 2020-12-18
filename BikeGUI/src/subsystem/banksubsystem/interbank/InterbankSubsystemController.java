@@ -21,7 +21,7 @@ public class InterbankSubsystemController {
      */
     public PaymentTransaction pay(Card card, int amount, String contents) throws PaymentException {
         JsonObject jsonObject = JSonUtils.getTransaction(Config.payComment, contents, amount);
-
+        System.out.println("san debug" + jsonObject.toString());
         String responseText = interbankBoundary.query(Config.baseUrl + Config.transactionUrl, jsonObject.toString());
         System.out.println(responseText);
         return extractPaymentTransaction(responseText);
@@ -96,6 +96,6 @@ public class InterbankSubsystemController {
     public static void main(String[] args) {
         InterbankSubsystemController interbankSubsystemController = new InterbankSubsystemController();
         System.out.println(interbankSubsystemController.reset());
-//        System.out.println(interbankSubsystemController.pay(Card.getInstance(), 2000000, "San rut tien"));
+//        System.out.println(interbankSubsystemController.pay(Card.getInstance(), 15000, "San rut tien"));
     }
 }

@@ -4,7 +4,7 @@ public class Bike {
 	private int id;
 	private int type;
 	private int pin;
-	private int deposit;
+//	private int deposit;
 	private int value;
 	private int dockId;
 	private String barcode;
@@ -13,16 +13,16 @@ public class Bike {
 	
 	@Override
 	public String toString() {
-		return "Bike [id=" + id + ", type=" + type + ", pin=" + pin + ", deposit=" + deposit + ", value=" + value
+		return "Bike [id=" + id + ", type=" + type + ", pin=" + pin  + ", value=" + value
 				+ ", dockId=" + dockId + ", barcode=" + barcode + "]";
 	}
 
-	public Bike(int id, int type, int pin, int deposit, int value, int dockId, String barcode) {
+	public Bike(int id, int type, int pin, int value, int dockId, String barcode) {
 		super();
 		this.id = id;
 		this.type = type;
 		this.pin = pin;
-		this.deposit = deposit;
+//		this.deposit = deposit;
 		this.value = value;
 		this.dockId = dockId;
 		this.barcode = barcode;
@@ -52,13 +52,13 @@ public class Bike {
 		this.pin = pin;
 	}
 	
-	public int getDeposit() {
-		return deposit;
-	}
-	
-	public void setDeposit(int deposit) {
-		this.deposit = deposit;
-	}
+//	public int getDeposit() {
+//		return deposit;
+//	}
+//
+//	public void setDeposit(int deposit) {
+//		this.deposit = deposit;
+//	}
 	
 	public int getValue() {
 		return value;
@@ -82,5 +82,18 @@ public class Bike {
 	
 	public void setBarcode(String barcode) {
 		this.barcode = barcode;
+	}
+
+	public int getDeposit() {
+		return this.value * 40 / 100;
+	}
+
+	public String getTypeString() {
+		if (this.getType() == 0)
+			return "Normal Bike";
+		else if (this.getType() == 1)
+			return "Electric Bike";
+		else
+			return "Tandem Bike";
 	}
 }

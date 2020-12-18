@@ -1,8 +1,24 @@
 
-public class Main {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
+public class Main extends Application {
+
+	@Override
+	public void start(Stage primaryStage) throws Exception{
+		Parent root = FXMLLoader.load(getClass().getResource("sample/fxml/home_screen.fxml"));
+		Scene homeScreenScene = new Scene(root);
+		primaryStage.setScene(homeScreenScene);
+
+		primaryStage.show();
+	}
+
+
 	public static void main(String[] args) {
-		String a = new String("a");
-		String b = new String("a");
-		System.out.print(a.equals(b));
+		launch(args);
 	}
 }

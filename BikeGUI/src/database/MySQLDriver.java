@@ -64,4 +64,8 @@ public class MySQLDriver {
 		}
 		return res;
 	}
+
+	public void update(String updateQuery) {
+		this.insert(updateQuery);
+	}
 }

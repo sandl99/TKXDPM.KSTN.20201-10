@@ -50,7 +50,7 @@ public class UserDao implements DAO<User> {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return users;
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public class UserDao implements DAO<User> {
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return user;
 	}
 
 	@Override

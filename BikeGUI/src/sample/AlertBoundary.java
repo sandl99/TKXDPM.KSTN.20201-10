@@ -12,27 +12,33 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BarcodeController implements Initializable {
+public class AlertBoundary implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         
     }
     
-    public void confirmButtonClicked(ActionEvent event)  throws IOException
+    public void yesButtonClicked(ActionEvent event)  throws IOException
 	{
     	/***
-    	 * kiem tra neu xe thuoc bai xe hien tai
+    	 * xu li va tra lai form renting neu thue thanh cong, neu khong thi thong bao va tro lai bike_list
     	 */
-    	Parent root = FXMLLoader.load(getClass().getResource("fxml/Alert.fxml"));
-        Scene alertScene = new Scene(root);
+    	Parent root = FXMLLoader.load(getClass().getResource("fxml/renting_detail.fxml"));
+        Scene rentingDetailScene = new Scene(root);
         
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+       
         primaryStage.close();
         
         Stage newStage = new Stage();
-        
-        newStage.setScene(alertScene);
+        newStage.setScene(rentingDetailScene);
         newStage.show();
 	}
+    
+    public void noButtonClicked(ActionEvent event)  throws IOException
+   	{
+    	Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    	primaryStage.close();
+   	}
 }
