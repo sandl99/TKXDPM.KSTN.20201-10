@@ -1,2 +1,7 @@
 .idea/
 *.iml
+*.class
+*.classpath
+*.project
+*.zip1
+.settings/
