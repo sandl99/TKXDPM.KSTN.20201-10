@@ -4,6 +4,11 @@ import subsystem.banksubsystem.utils.HttpConnector;
 
 import java.lang.Exception;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class BarcodeBoundary {
     String query(String url) {
         String respond = null;

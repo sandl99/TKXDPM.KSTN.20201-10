@@ -10,6 +10,11 @@ import database.MySQLDriver;
 import entity.Dock;
 import log.LogManager;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class DockDao implements DAO<Dock> {
 	List<Dock> docks = new ArrayList<>();
 	MySQLDriver mySQLDriver = MySQLDriver.getDriverConnection();

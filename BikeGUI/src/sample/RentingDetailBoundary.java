@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author sanpc
+ * @author san.dl170111
  */
 public class RentingDetailBoundary implements Initializable {
     @FXML
@@ -93,11 +93,22 @@ public class RentingDetailBoundary implements Initializable {
                 LogManager.log.info("Return button YES pressed !");
                 if (returnBikeController == null) returnBikeController = new ReturnBikeController();
                 try {
-                    Dock dock = chooseDockToReturn()
-                    returnBikeController.refund(rentingBikeController.getTransaction(), rentingBikeController.getTotal());
-                    alert("Return successfully !");
-                    Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                    primaryStage.close();
+                    Label label = new Label();
+                    Bike bike = rentingBikeController.getTransaction().getBike();
+                    rentingBikeController.setDockInfoController(bike.getDockId());
+
+                    Dock dock = chooseDockToReturn(this.dockListController.getDocks());
+                    showInputTextDialog(label);
+                    System.out.println(label.getText());
+                    String str1 = rentingBikeController.requestBarcodeStr(label.getText());
+                    if (!bike.getBarcode().equals(str1)) {
+                        alert("Bike not match or barcode not found !");
+                    } else {
+                        returnBikeController.refund(rentingBikeController.getTransaction(), rentingBikeController.getTotal(), dock);
+                        alert("Return successfully !");
+                        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        primaryStage.close();
+                    }
                 }
                 catch (PaymentException e) {
                     alert(e.getMessage());
@@ -121,6 +132,22 @@ public class RentingDetailBoundary implements Initializable {
         result.ifPresent(dockSelected -> {
             dock[0] = dockSelected;});
         return dock[0];
+    }
+
+    private void showInputTextDialog(Label label) {
+//        final String[] name = new String[1];
+        TextInputDialog dialog = new TextInputDialog("");
+
+        dialog.setTitle("Barcode");
+        dialog.setHeaderText("Enter barcode:");
+        dialog.setContentText("Barcode:");
+
+        Optional<String> result = dialog.showAndWait();
+
+        result.ifPresent(name1 -> {
+            label.setText(name1);
+        });
+//        return name[0];
     }
 
 }

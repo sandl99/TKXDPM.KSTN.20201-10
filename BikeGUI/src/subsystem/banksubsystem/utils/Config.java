@@ -1,5 +1,10 @@
 package subsystem.banksubsystem.utils;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class Config {
     public static final String baseUrl = "https://ecopark-system-api.herokuapp.com";
     public static final String resetUrl = "/api/card/reset-balance";

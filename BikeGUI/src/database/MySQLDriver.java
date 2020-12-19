@@ -8,6 +8,11 @@ import java.sql.Statement;
 
 import com.mysql.cj.jdbc.JdbcConnection;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class MySQLDriver {
 	private static MySQLDriver instance;
 	

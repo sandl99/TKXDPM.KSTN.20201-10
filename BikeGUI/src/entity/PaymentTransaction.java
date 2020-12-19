@@ -1,5 +1,10 @@
 package entity;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class PaymentTransaction {
     private String errorCode;
     private Card card;

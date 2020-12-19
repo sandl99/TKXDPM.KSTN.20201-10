@@ -3,6 +3,11 @@ package database;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public interface DAO <T> {
 	List<T> getAll();
 	T getByID(int id);

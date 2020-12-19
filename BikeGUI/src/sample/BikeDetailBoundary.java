@@ -12,6 +12,11 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class BikeDetailBoundary implements Initializable {
 
     @FXML

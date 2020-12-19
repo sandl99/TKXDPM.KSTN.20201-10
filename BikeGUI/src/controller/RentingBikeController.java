@@ -6,6 +6,11 @@ import log.LogManager;
 import subsystem.banksubsystem.InterbankSubsystem;
 import subsystem.barcodesubsystem.BarcodeSubsystem;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class RentingBikeController {
     private BarcodeSubsystem barcodeSubsystem;
     private DockInfoController dockInfoController;
@@ -18,7 +23,14 @@ public class RentingBikeController {
         paymentController = new PaymentController();
         this.dockInfoController = dockInfoController;
     }
-    public RentingBikeController() {}
+    public RentingBikeController() {
+        barcodeSubsystem = new BarcodeSubsystem();
+        paymentController = new PaymentController();
+    }
+
+    public void setDockInfoController(int id) {
+        this.dockInfoController = new DockInfoController(id);
+    }
 
     public Transaction setTransaction(Transaction transaction, String name, String card, Bike bike) {
         if (transaction.getStatus() == 0) {
@@ -68,6 +80,10 @@ public class RentingBikeController {
     public Bike requestBarcode(String barcode) {
         String barcodeConverted = this.barcodeSubsystem.exchangeBarcode(barcode);
         return dockInfoController.getBikeByBarcode(barcodeConverted);
+    }
+    public String requestBarcodeStr(String barcode) {
+        return this.barcodeSubsystem.exchangeBarcode(barcode);
+//        return dockInfoController.getBikeByBarcode(barcodeConverted);
     }
 }
 

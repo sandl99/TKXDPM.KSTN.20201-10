@@ -16,6 +16,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class BikeItemBoundary implements Initializable {
 	Bike bike;
 	Dock dock;

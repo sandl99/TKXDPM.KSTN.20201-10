@@ -7,6 +7,11 @@ import exception.PaymentException;
 import exception.UnrecognizedException;
 import subsystem.banksubsystem.InterbankSubsystem;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class PaymentController {
 
     private InterbankSubsystem interbankSubsystem;

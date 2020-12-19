@@ -3,6 +3,11 @@ package subsystem.banksubsystem.utils;
 import com.google.gson.JsonObject;
 import entity.Card;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class JSonUtils {
     private static Card getCard() {
         return Card.getInstance();

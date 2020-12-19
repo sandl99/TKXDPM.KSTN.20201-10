@@ -1,5 +1,10 @@
 package entity;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class Bike {
 	private int id;
 	private int type;

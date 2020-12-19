@@ -11,6 +11,11 @@ import database.DAO;
 import database.MySQLDriver;
 import entity.Transaction;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class TransactionDao implements DAO<Transaction> {
 	List<Transaction> transactions = new ArrayList<>();
 	MySQLDriver mySQLDriver = MySQLDriver.getDriverConnection();

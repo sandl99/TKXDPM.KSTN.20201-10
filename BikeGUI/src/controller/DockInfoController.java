@@ -3,9 +3,15 @@ package controller;
 import entity.Bike;
 import entity.Dock;
 import entity.mysqlDao.BikeDao;
+import entity.mysqlDao.DockDao;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ *
+ * @author san.dl170111
+ */
 
 public class DockInfoController {
     Dock dock;
@@ -13,6 +19,11 @@ public class DockInfoController {
     BikeDao bikeDao;
     public DockInfoController(Dock dock) {
         this.dock = dock;
+        bikeDao = new BikeDao();
+    }
+    public DockInfoController(int id) {
+        DockDao dockDao = new DockDao();
+        this.dock = dockDao.getByID(id);
         bikeDao = new BikeDao();
     }
 

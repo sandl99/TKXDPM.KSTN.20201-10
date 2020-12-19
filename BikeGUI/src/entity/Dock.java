@@ -1,5 +1,10 @@
 package entity;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class Dock {
 	private int id;
 	private String name, address;

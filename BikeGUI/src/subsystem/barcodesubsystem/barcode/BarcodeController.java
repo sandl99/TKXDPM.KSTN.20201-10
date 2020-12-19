@@ -3,6 +3,11 @@ package subsystem.barcodesubsystem.barcode;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class BarcodeController {
     BarcodeBoundary barcodeBoundary = new BarcodeBoundary();
     public String exchangeBarcode(String barcode) {

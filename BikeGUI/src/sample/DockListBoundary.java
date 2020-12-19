@@ -24,6 +24,11 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Random;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class DockListBoundary implements Initializable {
 
     @FXML // fx:id="dock_item"

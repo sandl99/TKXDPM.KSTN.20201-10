@@ -13,6 +13,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import subsystem.barcodesubsystem.BarcodeSubsystem;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class BarcodeBoundary implements Initializable {
 
     BarcodeSubsystem barcodeSubsystem;

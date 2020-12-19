@@ -6,6 +6,11 @@ import entity.mysqlDao.DockDao;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class DockListController {
     List<Dock> docks;
     DockDao dockDao;

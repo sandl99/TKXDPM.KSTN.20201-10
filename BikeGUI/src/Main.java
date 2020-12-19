@@ -5,7 +5,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
+/**
+ *
+ * @author san.dl170111
+ */
 public class Main extends Application {
 
 	@Override

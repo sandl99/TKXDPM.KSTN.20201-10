@@ -17,6 +17,11 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import log.LogManager;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class HomeScreenBoundary implements  Initializable {
 	@FXML
 	private Button view_dock_list;

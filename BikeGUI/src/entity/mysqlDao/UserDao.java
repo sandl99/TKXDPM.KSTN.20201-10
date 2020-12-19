@@ -10,6 +10,11 @@ import database.MySQLDriver;
 import entity.User;
 import log.LogManager;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class UserDao implements DAO<User> {
 	List<User> users = new ArrayList<>();
 	MySQLDriver mySQLDriver = MySQLDriver.getDriverConnection();

@@ -2,6 +2,11 @@ package entity;
 
 import java.sql.Date;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class Transaction {
 	private int userId;
 	private int bikeId;

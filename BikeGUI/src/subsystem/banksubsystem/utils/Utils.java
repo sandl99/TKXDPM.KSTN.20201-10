@@ -10,6 +10,11 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class Utils {
     public static DateFormat DATE_FORMATER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     public static Logger LOGGER = getLogger(Utils.class.getName());

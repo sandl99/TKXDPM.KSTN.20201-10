@@ -10,6 +10,11 @@ import database.MySQLDriver;
 import entity.Bike;
 import log.LogManager;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class BikeDao implements DAO<Bike>{
 	List<Bike> bikes = new ArrayList<>();
 	MySQLDriver mySQLDriver = MySQLDriver.getDriverConnection();

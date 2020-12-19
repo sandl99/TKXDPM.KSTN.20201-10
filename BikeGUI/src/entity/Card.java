@@ -1,5 +1,10 @@
 package entity;
 
+/**
+ *
+ * @author san.dl170111
+ */
+
 public class Card {
     private String id;
     private String owner;
