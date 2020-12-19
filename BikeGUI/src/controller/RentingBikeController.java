@@ -77,13 +77,6 @@ public class RentingBikeController {
         double numT = ((double) t) / 15;
         return 10000 + 3000 * ((int)Math.ceil(numT));
     }
-    public Bike requestBarcode(String barcode) {
-        String barcodeConverted = this.barcodeSubsystem.exchangeBarcode(barcode);
-        return dockInfoController.getBikeByBarcode(barcodeConverted);
-    }
-    public String requestBarcodeStr(String barcode) {
-        return this.barcodeSubsystem.exchangeBarcode(barcode);
-//        return dockInfoController.getBikeByBarcode(barcodeConverted);
-    }
+
 }
 

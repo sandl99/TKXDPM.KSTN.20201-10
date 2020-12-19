@@ -4,6 +4,7 @@
 
 package sample;
 
+import controller.BarcodeController;
 import controller.DockInfoController;
 import controller.RentingBikeController;
 import entity.Bike;
@@ -41,11 +42,13 @@ public class BikeListBoundary implements Initializable {
 
     private RentingBikeController rentingBikeController;
     private DockInfoController dockInfoController;
+    private BarcodeController barcodeController;
     Transaction transaction;
 
     public BikeListBoundary(DockInfoController dockInfoController) {
         this.dockInfoController = dockInfoController;
         this.rentingBikeController = new RentingBikeController(dockInfoController);
+        this.barcodeController = new BarcodeController(dockInfoController);
         transaction = Transaction.getTransaction();
     }
     @Override
@@ -115,7 +118,7 @@ public class BikeListBoundary implements Initializable {
             Label label = new Label();
             this.showInputTextDialog(label);
             String barcode = label.getText();
-            Bike bike = rentingBikeController.requestBarcode(barcode);
+            Bike bike = barcodeController.requestBarcode(barcode);
 
             if (bike == null) {
                 ButtonType loginButtonType = new ButtonType("Close", ButtonBar.ButtonData.OK_DONE);
