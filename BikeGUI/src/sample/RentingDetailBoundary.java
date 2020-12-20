@@ -1,5 +1,6 @@
 package sample;
 
+import controller.BarcodeController;
 import controller.DockListController;
 import controller.RentingBikeController;
 import controller.ReturnBikeController;
@@ -41,11 +42,13 @@ public class RentingDetailBoundary implements Initializable {
     private RentingBikeController rentingBikeController;
     private ReturnBikeController returnBikeController;
     private DockListController dockListController;
+    private BarcodeController barcodeController;
 
 //    private
     public RentingDetailBoundary(RentingBikeController rentingBikeController) {
         this.rentingBikeController = rentingBikeController;
         this.dockListController = new DockListController();
+        this.barcodeController = new BarcodeController();
     }
 
     private String getDurationString(int seconds) {
@@ -100,7 +103,7 @@ public class RentingDetailBoundary implements Initializable {
                     Dock dock = chooseDockToReturn(this.dockListController.getDocks());
                     showInputTextDialog(label);
                     System.out.println(label.getText());
-                    String str1 = rentingBikeController.requestBarcodeStr(label.getText());
+                    String str1 = barcodeController.requestBarcodeStr(label.getText());
                     if (!bike.getBarcode().equals(str1)) {
                         alert("Bike not match or barcode not found !");
                     } else {
