@@ -5,7 +5,7 @@ import sample.BarcodeBoundary;
 import subsystem.barcodesubsystem.BarcodeSubsystem;
 
 /**
- * @author san.dl170111
+ * 
  */
 public class BarcodeController {
     BarcodeSubsystem barcodeSubsystem = new BarcodeSubsystem();

@@ -1,8 +1,7 @@
 package entity;
 
 /**
- *
- * @author san.dl170111
+ *Lop User chua cac thao tac lien quan den thuoc tinh cua User
  */
 
 public class User {
@@ -11,7 +10,13 @@ public class User {
 	private String card;
 	
 	public User() {}
-
+	
+	/**
+	 * khoi dung doi tuong cua lop User
+	 * @param id - ma khach hang
+	 * @param name - ten
+	 * @param card - ma the
+	 */
 	public User(int id, String name, String card) {
 		super();
 		this.id = id;

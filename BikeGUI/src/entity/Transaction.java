@@ -3,8 +3,7 @@ package entity;
 import java.sql.Date;
 
 /**
- *
- * @author san.dl170111
+ *Lop Transaction chua cac thao tac lien quan den thuoc tinh cua Transaction
  */
 
 public class Transaction {
@@ -71,7 +70,16 @@ public class Transaction {
 		return "Transaction [userId=" + userId + ", bikeId=" + bikeId + ", id=" + id + ", status=" + status + ", total="
 				+ total + "]";
 	}
-
+	
+	/**
+	 * khoi dung doi tuong cua lop Transaction
+	 * @param userId - ma khach hang
+	 * @param bikeId - ma xe
+	 * @param id - ma giao dich
+	 * @param status - trang thai giao dich
+	 * @param total - so tien giao dich
+	 * @param date - ngay giao dich
+	 */
 	public Transaction(int userId, int bikeId, int id, int status, int total, String date) {
 		super();
 		this.userId = userId;

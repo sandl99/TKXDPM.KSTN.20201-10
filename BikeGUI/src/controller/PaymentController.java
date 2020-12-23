@@ -18,6 +18,12 @@ public class PaymentController {
     public PaymentController() {
         this.interbankSubsystem = new InterbankSubsystem();
     }
+    
+    /**
+     * pay
+     * @param transaction 
+     * @return
+     */
     public PaymentTransaction pay(Transaction transaction) {
         return interbankSubsystem.pay(Card.getInstance(), transaction.getBike().getDeposit(), "Thue xe: Bike " + transaction.getBike().getId());
     }

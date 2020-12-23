@@ -2,7 +2,7 @@ package entity;
 
 /**
  *
- * @author san.dl170111
+ * Lop Bike chua cac thao tac lien quan den cac thuoc tinh cua Bike
  */
 
 public class Bike {
@@ -21,7 +21,16 @@ public class Bike {
 		return "Bike [id=" + id + ", type=" + type + ", pin=" + pin  + ", value=" + value
 				+ ", dockId=" + dockId + ", barcode=" + barcode + "]";
 	}
-
+	
+	/**
+	 * khoi dung doi tuong
+	 * @param id - id cua Bike
+	 * @param type - loai xe
+	 * @param pin - dung luong pin
+	 * @param value - gia xe
+	 * @param dockId - ma bai xe chua chiec xe
+	 * @param barcode - barcode cua xe
+	 */
 	public Bike(int id, int type, int pin, int value, int dockId, String barcode) {
 		super();
 		this.id = id;
@@ -92,7 +101,10 @@ public class Bike {
 	public int getDeposit() {
 		return this.value * 40 / 100;
 	}
-
+	
+	/**
+	 * getTypeString, tra ve loai xe
+	 */
 	public String getTypeString() {
 		if (this.getType() == 0)
 			return "Normal Bike";

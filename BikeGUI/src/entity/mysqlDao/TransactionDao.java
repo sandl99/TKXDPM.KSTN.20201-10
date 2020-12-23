@@ -13,7 +13,7 @@ import entity.Transaction;
 
 /**
  *
- * @author san.dl170111
+ * Lop TransactionDao dung de thao tac voi co so du lieu lien quan den Transaction
  */
 
 public class TransactionDao implements DAO<Transaction> {
@@ -49,6 +49,10 @@ public class TransactionDao implements DAO<Transaction> {
 	}
 	
 	@Override
+	/**
+	 * getAll, then return List<Transaction?
+	 * lay danh sach Transaction tu co so du lieu
+	 */
 	public List<Transaction> getAll() {
 		transactions.clear();
 		String query = "SELECT * FROM rent_bike.transaction";
@@ -66,6 +70,10 @@ public class TransactionDao implements DAO<Transaction> {
 	}
 
 	@Override
+	/**
+	 * getByID, tra ve Transaction tuong ung voi ma id
+	 * @param id - ma Transaction
+	 */
 	public Transaction getByID(int id) {
 		Transaction transaction = this.checkId(id);
 		if (transaction == null) {
@@ -82,6 +90,9 @@ public class TransactionDao implements DAO<Transaction> {
 	}
 
 	@Override
+	/**
+	 * save dung de luu lai giao dich t vao co so du lieu
+	 */
 	public void save(Transaction t) {
 		String insertQuery = "INSERT INTO rent_bike.transaction (bikeId, userId, status, total, date, time) VALUES ('";
 		insertQuery = insertQuery + t.getBikeId() + "','" + t.getUserId() + "','" + t.getStatus() + "','" + t.getTotal() + "','" + t.getDate().toString() + "','" + t.getTotalTime() + "')";

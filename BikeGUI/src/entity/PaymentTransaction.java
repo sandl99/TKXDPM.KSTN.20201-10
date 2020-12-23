@@ -1,9 +1,5 @@
 package entity;
 
-/**
- *
- * @author san.dl170111
- */
 
 public class PaymentTransaction {
     private String errorCode;
@@ -12,7 +8,16 @@ public class PaymentTransaction {
     private String transactionContent;
     private int amount;
     private String createdAt;
-
+    
+    /**
+     * khoi dung doi tuong cua lop PaymentTransaction
+     * @param errorCode - ma loi
+     * @param card - the thanh toan giao dich
+     * @param transactionId - ma giao dich
+     * @param transactionContent - noi dung giao dich
+     * @param amount - so tien can thanh toan
+     * @param createdAt - thowi gian thue xe
+     */
     public PaymentTransaction(String errorCode, Card card, String transactionId, String transactionContent, int amount, String createdAt) {
         this.errorCode = errorCode;
         this.card = card;

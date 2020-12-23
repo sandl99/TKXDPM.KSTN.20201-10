@@ -5,7 +5,7 @@ import java.util.Optional;
 
 /**
  *
- * @author san.dl170111
+ * Lop {@code interface DAO} duoc su dung de ket noi voi database
  */
 
 public interface DAO <T> {

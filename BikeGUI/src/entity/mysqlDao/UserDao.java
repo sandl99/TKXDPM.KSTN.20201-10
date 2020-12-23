@@ -11,8 +11,7 @@ import entity.User;
 import log.LogManager;
 
 /**
- *
- * @author san.dl170111
+ *Lop UserDao dung de thao tac voi co so du lieu lien quan den User
  */
 
 public class UserDao implements DAO<User> {
@@ -43,6 +42,9 @@ public class UserDao implements DAO<User> {
 	}
 
 	@Override
+	/**
+	 * getAll, tra lai danh sach User tu co so du lieu
+	 */
 	public List<User> getAll() {
 		users.clear();
 		String query = "SELECT * From rent_bike.user";
@@ -59,6 +61,9 @@ public class UserDao implements DAO<User> {
 	}
 
 	@Override
+	/**
+	 * getByID, tra lai User tuong ung voi id
+	 */
 	public User getByID(int id) {
 		User user = this.checkId(id);
 		if (user == null) {

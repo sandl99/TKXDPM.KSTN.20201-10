@@ -2,7 +2,7 @@ package entity;
 
 /**
  *
- * @author san.dl170111
+ * Lop Card chua cac thao tac lien quan den thuoc tinh cua Card
  */
 
 public class Card {
@@ -14,7 +14,14 @@ public class Card {
     private int amount;
 
     private static Card card = null;
-
+    
+    /**
+     * khoi dung doi tuong cua lop Card
+     * @param id - ma the
+     * @param owner - chu the
+     * @param ccv - ma bao mat
+     * @param dateExpire - ngay het han
+     */
     public Card(String id, String owner, String ccv, String dateExpire) {
         this.id = id;
         this.owner = owner;
@@ -62,6 +69,10 @@ public class Card {
         this.dateExpire = dateExpire;
     }
 
+    /**
+     * getInstance
+     * @return Card
+     */
     public static Card getInstance() {
         if (card == null) {
             card = new Card("118131_group10_2020", "Group 10", "312", "1125");

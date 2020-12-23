@@ -11,8 +11,8 @@ import entity.Dock;
 import log.LogManager;
 
 /**
+ *Lop DockDao thao tac du lieu lien quan den Dock
  *
- * @author san.dl170111
  */
 
 public class DockDao implements DAO<Dock> {
@@ -41,6 +41,9 @@ public class DockDao implements DAO<Dock> {
 	}
 	
 	@Override
+	/**
+	 * getAll, tra ve danh sach cac bai xe duoc lay tu co so du lieu
+	 */
 	public List<Dock> getAll() {
 		docks.clear();
 		String query = "SELECT * FROM rent_bike.dock";
@@ -59,6 +62,9 @@ public class DockDao implements DAO<Dock> {
 	}
 
 	@Override
+	/**
+	 * getByID, tra ve bai xe tuong ung voi id 
+	 */
 	public Dock getByID(int id) {
 		Dock dock = this.checkId(id);
 		if (dock == null) {

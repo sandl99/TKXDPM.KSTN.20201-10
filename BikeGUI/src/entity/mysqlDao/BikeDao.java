@@ -11,8 +11,7 @@ import entity.Bike;
 import log.LogManager;
 
 /**
- *
- * @author san.dl170111
+ *Class BikeDao dung de thao tac du lieu lien quan den Bike
  */
 
 public class BikeDao implements DAO<Bike>{
@@ -53,6 +52,11 @@ public class BikeDao implements DAO<Bike>{
 	}
 	
 	@Override
+	/**
+	 * getAll, and then return List<Bike>
+	 * 
+	 * @return danh sach tat ca xe
+	 */
 	public List<Bike> getAll() {
 		bikes.clear();
 		String query = "SELECT * FROM rent_bike.bike";
@@ -72,6 +76,11 @@ public class BikeDao implements DAO<Bike>{
 	}
 
 	@Override
+	/**
+	 * getByID, then return Bike
+	 * @param id - id cua xe dap
+	 * @return xe dap tuong ung voi id
+	 */
 	public Bike getByID(int id) {
 		// TODO Auto-generated method stub
 		Bike bike = this.checkId(id);
@@ -88,7 +97,12 @@ public class BikeDao implements DAO<Bike>{
 		}
 		return bike;
 	}
-
+	
+	/**
+	 * getByDockID,, then return List<Bike>
+	 * @param id - id cua bai xe
+	 * @return danh sach xe dap co trong bai xe ung voi id
+	 */
 	public List<Bike> getByDockId(int id) {
 		List<Bike> _bikes = new ArrayList<>();
 		String query = "SELECT * FROM rent_bike.bike WHERE bike.dockId=" + id;
@@ -112,6 +126,12 @@ public class BikeDao implements DAO<Bike>{
 	}
 
 	@Override
+	
+	/**
+	 * update dung de cap nhat dockId cua xe dap 
+	 * @param Bike t
+	 * 
+	 */
 	public void update(Bike t) {
 		String query = "UPDATE `rent_bike`.`bike` SET `dockId` = '" + t.getDockId() + "' WHERE (`id` = '" + t.getId() + "')";
 		LogManager.log.info(query);

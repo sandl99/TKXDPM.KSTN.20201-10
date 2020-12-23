@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author san.dl170111
+ * Lop DockListController chua cac thao tac de lay danh sach bai xe
  */
 
 public class DockListController {
@@ -16,7 +16,7 @@ public class DockListController {
     DockDao dockDao;
 
     /**
-     * init constructor
+     * khoi dung doi tuong
      */
     public DockListController() {
         this.docks = new ArrayList<>();
@@ -24,8 +24,8 @@ public class DockListController {
     }
 
     /**
-     * get all docks
-     * @return
+     * Get Docks, tra ve danh sach bai xe
+     * @return {@link entity.Dock}
      */
     public List<Dock> getDocks() {
         if (docks.size() == 0) {

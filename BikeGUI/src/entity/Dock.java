@@ -1,8 +1,7 @@
 package entity;
 
 /**
- *
- * @author san.dl170111
+ * Lop Dock chua cac thao tac lien quan den thuoc tinh cua Dock
  */
 
 public class Dock {
@@ -10,7 +9,13 @@ public class Dock {
 	private String name, address;
 	
 	public Dock() {}
-
+	
+	/**
+	 * khoi dung doi tuong cua lop Dock
+	 * @param id - ma bai xe
+	 * @param name - ten bai xe
+	 * @param address - dia chi bai xe
+	 */
 	public Dock(int id, String name, String address) {
 		super();
 		this.id = id;
