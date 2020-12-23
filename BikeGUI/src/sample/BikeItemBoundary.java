@@ -17,8 +17,8 @@ import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 
 /**
- *
- * @author san.dl170111
+ * Bike view
+ * @author Group 10
  */
 
 public class BikeItemBoundary implements Initializable {
@@ -43,6 +43,11 @@ public class BikeItemBoundary implements Initializable {
 		this.pin.setProgress(bike.getPin());
 	}
 
+	/**
+	 * view detail
+	 * @param event ActionEvent
+	 * @throws IOException IOException
+	 */
 	public void availableButtonClicked(ActionEvent event)  throws IOException
 	{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/bike_detail.fxml"));

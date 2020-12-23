@@ -1,8 +1,8 @@
 package exception;;
 
 /**
- *
- * @author san.dl170111
+ * Invalid Transaction Amount Exception
+ * @author Group 10
  */
 
 public class InvalidTransactionAmountException extends PaymentException {

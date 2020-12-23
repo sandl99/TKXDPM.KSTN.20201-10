@@ -8,19 +8,35 @@ import exception.UnrecognizedException;
 import subsystem.banksubsystem.InterbankSubsystem;
 
 /**
- *
- * @author san.dl170111
+ * Control all business of Payment transaction
+ * @author Group 10
  */
 
 public class PaymentController {
 
     private InterbankSubsystem interbankSubsystem;
+
+    /**
+     * init constructor
+     */
     public PaymentController() {
         this.interbankSubsystem = new InterbankSubsystem();
     }
+
+    /**
+     * payment controller
+     * @param transaction {@link entity.Transaction} for payment
+     * @return a respond extract to {@link entity.PaymentTransaction}
+     */
     public PaymentTransaction pay(Transaction transaction) {
         return interbankSubsystem.pay(Card.getInstance(), transaction.getBike().getDeposit(), "Thue xe: Bike " + transaction.getBike().getId());
     }
+
+    /**
+     * payment controller
+     * @param transaction {@link entity.Transaction} for payment
+     * @return a respond extract to {@link entity.PaymentTransaction}
+     */
     public PaymentTransaction refund(Transaction transaction) throws PaymentException {
         if (transaction.getTotal() > transaction.getBike().getDeposit())
             throw new UnrecognizedException();

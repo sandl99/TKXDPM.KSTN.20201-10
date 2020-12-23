@@ -27,8 +27,8 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
- *
- * @author san.dl170111
+ * Dock view (Bike List)
+ * @author Group 10
  */
 
 
@@ -45,12 +45,17 @@ public class BikeListBoundary implements Initializable {
     private BarcodeController barcodeController;
     Transaction transaction;
 
+    /**
+     * Constructor with {@link DockInfoController}
+     * @param dockInfoController DockInfoController
+     */
     public BikeListBoundary(DockInfoController dockInfoController) {
         this.dockInfoController = dockInfoController;
         this.rentingBikeController = new RentingBikeController(dockInfoController);
         this.barcodeController = new BarcodeController(dockInfoController);
         transaction = Transaction.getTransaction();
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         for (int i = 0; i < 3; i++) {
@@ -90,6 +95,10 @@ public class BikeListBoundary implements Initializable {
 //        listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
+    /**
+     * popup for barcode
+     * @param label text
+     */
     private void showInputTextDialog(Label label) {
 //        Label label;
         TextInputDialog dialog = new TextInputDialog("");
@@ -106,8 +115,8 @@ public class BikeListBoundary implements Initializable {
     }
 
     /**
-     * Rent a bike, if choose one -> alert box confirm yes/no, if no choice -> announ 
-     * @param event
+     * Rent a bike, if choose one, alert box confirm yes/no, if no choice, alert announ
+     * @param event ActionEvent
      * @throws IOException
      */
     public void rentABikeButtonClicked(ActionEvent event)  throws IOException
@@ -155,6 +164,11 @@ public class BikeListBoundary implements Initializable {
         }
     }
 
+    /**
+     * back click
+     * @param event  ActionEvent
+     * @throws IOException IOException
+     */
     public void backButtonClicked(ActionEvent event)  throws IOException
     {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/dock_list.fxml"));

@@ -11,8 +11,8 @@ import java.util.Locale;
 import java.util.logging.Logger;
 
 /**
- *
- * @author san.dl170111
+ * Class provide some utils for get today, get md5, ...
+ * @author Group 10
  */
 
 public class Utils {

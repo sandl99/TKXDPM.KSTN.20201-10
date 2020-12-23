@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author san.dl170111
+ * @author Group 10
  */
 public class RentingDetailBoundary implements Initializable {
     @FXML
@@ -45,12 +45,22 @@ public class RentingDetailBoundary implements Initializable {
     private BarcodeController barcodeController;
 
 //    private
+
+    /**
+     * Constructor with {@link RentingBikeController}
+     * @param rentingBikeController RentingBikeController
+     */
     public RentingDetailBoundary(RentingBikeController rentingBikeController) {
         this.rentingBikeController = rentingBikeController;
         this.dockListController = new DockListController();
         this.barcodeController = new BarcodeController();
     }
 
+    /**
+     * Convert second to string
+     * @param seconds int
+     * @return String
+     */
     private String getDurationString(int seconds) {
 
         int hours = seconds / 3600;
@@ -72,6 +82,11 @@ public class RentingDetailBoundary implements Initializable {
         this.barcode.setText(bike.getBarcode());
         this.total.setText(rentingBikeController.getTotal() + " VND");
     }
+
+    /**
+     * pop up
+     * @param s String
+     */
     private void alert(String s) {
         ButtonType loginButtonType = new ButtonType("Close", ButtonBar.ButtonData.OK_DONE);
         Dialog<String> dialog = new Dialog<>();
@@ -82,6 +97,12 @@ public class RentingDetailBoundary implements Initializable {
         dialog.getDialogPane().lookupButton(loginButtonType).setDisable(disabled);
         dialog.showAndWait();
     }
+    /**
+     * return click
+     * @param event  ActionEvent
+     * @throws IOException IOException
+     */
+
     @FXML
     public void onClickReturn (ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -122,6 +143,11 @@ public class RentingDetailBoundary implements Initializable {
         });
     }
 
+    /**
+     * pop up choose dock for return
+     * @param docks a {@link List} of {@link Dock}
+     * @return a Dock
+     */
     private Dock chooseDockToReturn(List<Dock> docks) {
         final Dock[] dock = new Dock[1];
         Dock defaultBook = docks.get(0);

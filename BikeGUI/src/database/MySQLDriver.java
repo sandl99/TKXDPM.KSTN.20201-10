@@ -9,8 +9,8 @@ import java.sql.Statement;
 import com.mysql.cj.jdbc.JdbcConnection;
 
 /**
- *
- * @author san.dl170111
+ * Connect to databases
+ * @author Group 10
  */
 
 public class MySQLDriver {
@@ -39,14 +39,23 @@ public class MySQLDriver {
 			sql.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * Singleton method
+	 * @return an instance MySQLDriver
+	 */
 	public static synchronized MySQLDriver getDriverConnection() {
 		if (MySQLDriver.instance == null) {
 				MySQLDriver.instance = new MySQLDriver();
 		}
 		return MySQLDriver.instance;
 	}
-	
+
+	/**
+	 * query to mysql databases
+	 * @param query a String
+	 * @return a ResultSet
+	 */
 	public ResultSet query(String query) {
 		ResultSet res = null;
 		try {
@@ -57,7 +66,12 @@ public class MySQLDriver {
 		}
 		return res;
 	}
-	
+
+	/**
+	 * insert to fb with query
+	 * @param insertQuery a String
+	 * @return code for successful or fail
+	 */
 	public int insert(String insertQuery) {
 		int res = -1;
 		try {

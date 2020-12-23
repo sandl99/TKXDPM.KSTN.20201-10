@@ -10,8 +10,9 @@ import subsystem.banksubsystem.utils.Utils;
 import exception.*;
 
 /**
- *
- * @author san.dl170111
+ * Class implement API for pay, refund, reset Card
+ * @author Group 10
+ * @version 1.0
  */
 
 public class InterbankSubsystemController {
@@ -19,10 +20,10 @@ public class InterbankSubsystemController {
 
     /**
      * query and get a Payment Transaction
-     * @param card
-     * @param amount
-     * @param contents
-     * @return
+     * @param card a singleton object
+     * @param amount number money
+     * @param contents content for transaction
+     * @return a {@link PaymentTransaction}
      */
     public PaymentTransaction pay(Card card, int amount, String contents) throws PaymentException {
         JsonObject jsonObject = JSonUtils.getTransaction(Config.payComment, contents, amount);
@@ -34,10 +35,10 @@ public class InterbankSubsystemController {
 
     /**
      * query and refund transaction
-     * @param card
-     * @param amount
-     * @param contents
-     * @return
+     * @param card a singleton object
+     * @param amount number money
+     * @param contents content for transaction
+     * @return a {@link PaymentTransaction}
      */
     public PaymentTransaction refund(Card card, int amount, String contents) throws PaymentException {
         JsonObject jsonObject = JSonUtils.getTransaction(Config.refundComment, contents, amount);
@@ -46,6 +47,12 @@ public class InterbankSubsystemController {
         return extractPaymentTransaction(respondText);
     }
 
+    /**
+     * extract respond data from server to json or catch Exception if error occur
+     * @param respond respond data from server
+     * @return a PaymentTransaction instance made from respond
+     * @throws exception.PaymentException exception.PaymentException
+     */
     private PaymentTransaction extractPaymentTransaction(String respond) throws PaymentException {
         Card card = Card.getInstance();
         JsonObject respondJson = new JsonParser().parse(respond).getAsJsonObject();
@@ -86,6 +93,10 @@ public class InterbankSubsystemController {
         return new PaymentTransaction(errCode, card, transactionId, transactionContent, amount, createdAt);
     }
 
+    /**
+     * reset balance to 1 million VND
+     * @return respond data
+     */
     public String reset() {
         JsonObject jsonObject = new JsonObject();
         Card card = Card.getInstance();

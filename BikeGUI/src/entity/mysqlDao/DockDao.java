@@ -11,8 +11,8 @@ import entity.Dock;
 import log.LogManager;
 
 /**
- *
- * @author san.dl170111
+ * Mysql Dock data access object implements {@link DAO}
+ * @author Group 10
  */
 
 public class DockDao implements DAO<Dock> {

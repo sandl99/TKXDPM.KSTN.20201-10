@@ -13,8 +13,8 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- *
- * @author san.dl170111
+ * Detail Bike Form
+ * @author Group 10
  */
 
 public class BikeDetailBoundary implements Initializable {
@@ -32,6 +32,12 @@ public class BikeDetailBoundary implements Initializable {
     public BikeDetailBoundary(Bike bike) {
         this.bike = bike;
     }
+
+    /**
+     * initialize func
+     * @param url url
+     * @param resourceBundle resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.bikeId.setText("Bike " + bike.getId());
@@ -40,7 +46,12 @@ public class BikeDetailBoundary implements Initializable {
         this.barcode.setText(bike.getBarcode());
         this.value.setText(bike.getValue() + " VND");
     }
-    
+
+    /**
+     * close clicked
+     * @param event ActionEvent
+     * @throws IOException Exception
+     */
     public void closeButtonClicked(ActionEvent event)  throws IOException
 	{
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();

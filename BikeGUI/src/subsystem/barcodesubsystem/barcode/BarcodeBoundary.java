@@ -5,11 +5,17 @@ import subsystem.banksubsystem.utils.HttpConnector;
 import java.lang.Exception;
 
 /**
- *
- * @author san.dl170111
+ * Class provide API for query http/https
+ * @author Group 10
+ * @version 1.0
  */
 
 public class BarcodeBoundary {
+    /**
+     * Get result from http get/post/patch
+     * @param url url of server
+     * @return respond data
+     */
     String query(String url) {
         String respond = null;
         try {

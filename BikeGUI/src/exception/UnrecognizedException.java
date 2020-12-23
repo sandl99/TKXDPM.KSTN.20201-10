@@ -1,8 +1,8 @@
 package exception;;
 
 /**
- *
- * @author san.dl170111
+ * Unrecognized Exception
+ * @author Group 10
  */
 
 public class UnrecognizedException extends RuntimeException {

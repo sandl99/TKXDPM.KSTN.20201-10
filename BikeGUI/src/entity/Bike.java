@@ -1,8 +1,8 @@
 package entity;
 
 /**
- *
- * @author san.dl170111
+ * entity class
+ * @author Group 10
  */
 
 public class Bike {

@@ -4,11 +4,15 @@ import com.google.gson.JsonObject;
 import entity.Card;
 
 /**
- *
- * @author san.dl170111
+ * Class provide tools for encapsulation transaction to Json
+ * @author Group 10
  */
 
 public class JSonUtils {
+    /**
+     * get Singleton Card
+     * @return Card
+     */
     private static Card getCard() {
         return Card.getInstance();
     }
@@ -18,7 +22,7 @@ public class JSonUtils {
      * @param command pay or refund
      * @param content note for transaction
      * @param amount amount of money
-     * @return json object
+     * @return {@link JsonObject JsonObject}
      */
     private static JsonObject getJsonForTransaction(String command, String content, int amount) {
         Card card = JSonUtils.getCard();
@@ -50,6 +54,13 @@ public class JSonUtils {
         return Utils.md5(jsonObject.toString());
     }
 
+    /**
+     * create JsonObject with hash code
+     * @param command   pay or refund
+     * @param content   content (note) of transaction
+     * @param amount  amount money for transaction
+     * @return  {@link JsonObject JsonObject} describe required attributes
+     */
     public static JsonObject getTransaction(String command, String content, int amount) {
         JsonObject jsonForTransaction = JSonUtils.getJsonForTransaction(command, content, amount);
         jsonForTransaction.addProperty("createdAt", Utils.getToday());
@@ -62,6 +73,10 @@ public class JSonUtils {
         return jsonObject;
     }
 
+    /**
+     * create JsonObject for reset transaction
+     * @return {@link JsonObject JsonObject}
+     */
     public static JsonObject getReset() {
         Card card = JSonUtils.getCard();
         JsonObject jsonObject = new JsonObject();

@@ -1,8 +1,8 @@
 package exception;;
 
 /**
- *
- * @author san.dl170111
+ * Suspicious Transaction Exception
+ * @author Group 10
  */
 
 public class SuspiciousTransactionException extends PaymentException {

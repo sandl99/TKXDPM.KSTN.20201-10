@@ -18,8 +18,8 @@ import javafx.stage.Stage;
 import log.LogManager;
 
 /**
- *
- * @author san.dl170111
+ * Renting Form
+ * @author Group 10
  */
 
 public class BikeFormRentingBoundary implements Initializable {
@@ -37,12 +37,22 @@ public class BikeFormRentingBoundary implements Initializable {
     @FXML
     private TextField card;
 
+    /**
+     * Constructor with {@link Bike}, {@link RentingBikeController}
+     * @param bike a Bike user want to rent
+     * @param rentingBikeController {@link RentingBikeController}
+     */
     public BikeFormRentingBoundary(Bike bike, RentingBikeController rentingBikeController) {
         this.bike = bike;
         this.rentingBikeController = rentingBikeController;
         transaction = rentingBikeController.getTransaction();
     }
 
+    /**
+     * initialize func
+     * @param url url
+     * @param resourceBundle resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.type.setText(bike.getTypeString());
@@ -50,6 +60,10 @@ public class BikeFormRentingBoundary implements Initializable {
         this.card.setText("118131_group10_2020");
     }
 
+    /**
+     * error pop up
+     * @param err a String
+     */
     private void errorDialog(String err) {
         ButtonType loginButtonType = new ButtonType("Close", ButtonBar.ButtonData.OK_DONE);
         Dialog<String> dialog = new Dialog<>();
@@ -60,6 +74,12 @@ public class BikeFormRentingBoundary implements Initializable {
         dialog.getDialogPane().lookupButton(loginButtonType).setDisable(disabled);
         dialog.showAndWait();
     }
+
+    /**
+     * confirm transaction
+     * @param event ActionEvent
+     * @throws IOException IOException
+     */
     public void confirmButtonClicked(ActionEvent event)  throws IOException
 	{
 	    rentingBikeController.setTransaction(transaction, name.getText(), card.getText(), bike);
