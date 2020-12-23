@@ -80,7 +80,7 @@ public class RentingDetailBoundary implements Initializable {
         this.deposit.setText(bike.getDeposit() + " VND");
         this.time.setText(getDurationString((int) rentingBikeController.getTimeUsing()));
         this.barcode.setText(bike.getBarcode());
-        this.total.setText(rentingBikeController.getTotal() + " VND");
+        this.total.setText(rentingBikeController.getTotal(rentingBikeController.getTimeUsing()) + " VND");
     }
 
     /**
@@ -128,7 +128,7 @@ public class RentingDetailBoundary implements Initializable {
                     if (!bike.getBarcode().equals(str1)) {
                         alert("Bike not match or barcode not found !");
                     } else {
-                        returnBikeController.refund(rentingBikeController.getTransaction(), rentingBikeController.getTotal(), dock);
+                        returnBikeController.refund(rentingBikeController.getTransaction(), rentingBikeController.getTotal(rentingBikeController.getTimeUsing()), dock);
                         alert("Return successfully !");
                         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         primaryStage.close();

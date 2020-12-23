@@ -99,10 +99,11 @@ public class RentingBikeController {
 
     /**
      * method calculate the total money for user
+     * @param t time at current for using bike
      * @return total money
      */
-    public int getTotal() {
-        long t = getTimeUsing();
+    public int getTotal(long t) {
+//        long t = getTimeUsing();
 //        long t = 1801;
         this.getTransaction().setTotalTime((int) t);
 //        long t = 2100;
