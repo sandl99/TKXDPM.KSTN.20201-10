@@ -1,8 +1,8 @@
 package exception;;
 
 /**
- *
- * @author san.dl170111
+ * Internal server exception
+ * @author Group 10
  */
 
 public class InternalServerErrorException extends PaymentException {

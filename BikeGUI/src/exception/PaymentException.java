@@ -1,8 +1,8 @@
 package exception;
 
 /**
- *
- * @author san.dl170111
+ * Payment Exception
+ * @author Group 10
  */
 
 public class PaymentException extends RuntimeException {

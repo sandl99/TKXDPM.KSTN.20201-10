@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author san.dl170111
+ *  DockListController control business of Dock List
+ * @author Group 10
  */
 
 public class DockListController {
@@ -25,7 +25,7 @@ public class DockListController {
 
     /**
      * get all docks
-     * @return
+     * @return a {@link List} of {@link entity.Dock}
      */
     public List<Dock> getDocks() {
         if (docks.size() == 0) {

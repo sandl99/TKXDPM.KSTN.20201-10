@@ -18,8 +18,8 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- *
- * @author san.dl170111
+ * Dock Item
+ * @author Group 10
  */
 
 public class DockItemBoundary implements Initializable {
@@ -35,6 +35,12 @@ public class DockItemBoundary implements Initializable {
 	@FXML
 	protected Label numBike;
 
+	/**
+	 * Constructor with {@link Dock}, numbBike, {@link DockInfoController}
+	 * @param dock a Dock
+	 * @param numBike number of Bike
+	 * @param dockInfoController DockInfoController
+	 */
 	public DockItemBoundary(Dock dock, int numBike, DockInfoController dockInfoController) {
 		this.dock = dock;
 		this.numberBike = numBike;
@@ -47,6 +53,13 @@ public class DockItemBoundary implements Initializable {
 		this.address.setText(dock.getAddress());
 		this.numBike.setText(String.valueOf(numberBike));
 	}
+
+	/**
+	 * open click
+	 * @param event  ActionEvent
+	 * @throws IOException IOException
+	 */
+
 	@FXML
 	public void openButtonClicked(ActionEvent event)  throws IOException
 	{

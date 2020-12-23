@@ -1,8 +1,9 @@
 package subsystem.banksubsystem.utils;
 
 /**
- *
- * @author san.dl170111
+ * Class provide some default configuration
+ * @author Group 10
+ * @version 1.0
  */
 
 public class Config {

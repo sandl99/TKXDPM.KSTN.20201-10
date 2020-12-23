@@ -3,8 +3,8 @@ package entity;
 import java.sql.Date;
 
 /**
- *
- * @author san.dl170111
+ * entity class
+ * @author Group 10
  */
 
 public class Transaction {

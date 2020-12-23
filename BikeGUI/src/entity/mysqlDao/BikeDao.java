@@ -11,8 +11,8 @@ import entity.Bike;
 import log.LogManager;
 
 /**
- *
- * @author san.dl170111
+ * Mysql Bike data access object implements {@link DAO}
+ * @author Group 10
  */
 
 public class BikeDao implements DAO<Bike>{

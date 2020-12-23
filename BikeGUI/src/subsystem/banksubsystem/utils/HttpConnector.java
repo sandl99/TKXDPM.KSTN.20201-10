@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 /**
  * Class: provide medthod to sending request to server and get responds
  * Date: 16/12/2020
- * @author san.dl170111
+ * @author Group 10
  * @version 1.0
  */
 public class HttpConnector {
@@ -24,10 +24,9 @@ public class HttpConnector {
 
     /**
      * Get API
-     * @param url
-     * @param token
-     * @return
-     * @throws Exception
+     * @param url an url + query
+     * @return  a respond string
+     * @throws Exception Exception for http get
      */
     public static String get(String url) throws Exception {
         // setup
@@ -57,10 +56,10 @@ public class HttpConnector {
 
     /**
      * method allows api post (transaction...)
-     * @param url
-     * @param data
-     * @return
-     * @throws IOException
+     * @param url url of server
+     * @param data a json object
+     * @return  respond data
+     * @throws  IOException Exception for http post, patch
      */
     public static String post(String url, String data) throws IOException {
         allowMethods("PATCH");
@@ -97,8 +96,8 @@ public class HttpConnector {
 
     /**
      * method allows api patch, put, ...
-     * @deprecated chi hoat dong voi java <= 11
-     * @param methods
+     * @deprecated chi hoat dong voi java nho hon 11
+     * @param methods all of method possible like post, patch, ..
      */
     private static void allowMethods(String... methods) {
         try {

@@ -12,8 +12,8 @@ import database.MySQLDriver;
 import entity.Transaction;
 
 /**
- *
- * @author san.dl170111
+ * Mysql Transaction data access object implements {@link DAO}
+ * @author Group 10
  */
 
 public class TransactionDao implements DAO<Transaction> {

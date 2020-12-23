@@ -25,8 +25,8 @@ import java.util.ResourceBundle;
 import java.util.Random;
 
 /**
- *
- * @author san.dl170111
+ * Dock List
+ * @author Group 10
  */
 
 public class DockListBoundary implements Initializable {
@@ -59,6 +59,11 @@ public class DockListBoundary implements Initializable {
             }
         }
     }
+    /**
+     * back click
+     * @param event  ActionEvent
+     * @throws IOException IOException
+     */
     @FXML
     public void backButtonClicked(ActionEvent event)  throws IOException
 	{
@@ -70,6 +75,11 @@ public class DockListBoundary implements Initializable {
         primaryStage.setScene(homeScreenScene);
         primaryStage.show();
 	}
+    /**
+     * back click
+     * @param event  ActionEvent
+     * @throws IOException IOException
+     */
     @FXML
     public void chooseARandomDockButtonClicked(ActionEvent event)  throws IOException
 	{

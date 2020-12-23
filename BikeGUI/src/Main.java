@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author san.dl170111
+ * @author Group 10
  */
 public class Main extends Application {
 

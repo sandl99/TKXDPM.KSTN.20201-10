@@ -19,7 +19,7 @@ import log.LogManager;
 
 /**
  *
- * @author san.dl170111
+ * @author Group 10
  */
 
 public class HomeScreenBoundary implements  Initializable {
@@ -35,6 +35,11 @@ public class HomeScreenBoundary implements  Initializable {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * view dock click
+	 * @param event  ActionEvent
+	 * @throws IOException IOException
+	 */
 	@FXML
 	public void viewDockListButtonClicked(ActionEvent event)  throws IOException
 	{
@@ -46,6 +51,11 @@ public class HomeScreenBoundary implements  Initializable {
         primaryStage.setScene(dockListScene);
         primaryStage.show();
 	}
+	/**
+	 * view renting bike click
+	 * @param event  ActionEvent
+	 * @throws IOException IOException
+	 */
 	@FXML
 	public void viewRentingBikeButtonClicked(ActionEvent event)  throws IOException
 	{

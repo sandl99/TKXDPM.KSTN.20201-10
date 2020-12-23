@@ -1,8 +1,8 @@
 package exception;;
 
 /**
- *
- * @author san.dl170111
+ * Invalid Card Exception
+ * @author Group 10
  */
 
 public class InvalidCardException extends PaymentException {

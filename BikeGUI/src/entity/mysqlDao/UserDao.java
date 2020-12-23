@@ -11,8 +11,8 @@ import entity.User;
 import log.LogManager;
 
 /**
- *
- * @author san.dl170111
+ * Mysql User data access object implements {@link DAO}
+ * @author Group 10
  */
 
 public class UserDao implements DAO<User> {
@@ -23,6 +23,12 @@ public class UserDao implements DAO<User> {
 		
 	}
 
+	/***
+	 *
+	 * @param res result set from mysql tools
+	 * @return User
+	 * @throws SQLException SQLException
+	 */
 	private User extractUser(ResultSet res) throws SQLException {
 		User user = new User();
 		int i = 0;

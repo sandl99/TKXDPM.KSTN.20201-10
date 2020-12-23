@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author san.dl170111
+ * @author Group 10
  */
 
 public class LogManager {
