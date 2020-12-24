@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeScreenBoundary">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <AnchorPane prefHeight="768.0" prefWidth="492.0" style="-fx-background-color: #d9f043;">
+         <children>
+            <Button onAction="#test" layoutX="148.0" layoutY="618.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="216.0" style="-fx-background-color: #95a346;" text="Learn more" textAlignment="CENTER" textFill="#362d2d" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
+            <Pane layoutX="57.0" layoutY="47.0" prefHeight="81.0" prefWidth="373.0">
+               <children>
+                  <Label layoutX="95.0" layoutY="10.0" prefHeight="53.0" prefWidth="264.0" text="ECOBIKE" textAlignment="RIGHT" textFill="#754040" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Broadway" size="53.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="68.0" fitWidth="77.0" layoutX="6.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="30.0" layoutY="128.0" prefHeight="449.0" prefWidth="451.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="77.0" prefHeight="171.0" prefWidth="411.0" text="Welcome to&#10;EcoBike">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="50.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="202.0" prefHeight="217.0" prefWidth="422.0" text="Our EcoBike offers a wide variety of &#10;replacement parts for lots of bikes.&#10;&#10;">
+                     <font>
+                        <Font name="Calibri Light" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane layoutX="485.0" prefHeight="768.0" prefWidth="874.0">
+         <children>
+            <Pane layoutX="-56.0" layoutY="206.0" prefHeight="542.0" prefWidth="916.0">
+               <children>
+                  <ImageView fitHeight="527.0" fitWidth="908.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@xe_dap.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Separator layoutX="47.0" layoutY="198.0" prefHeight="8.0" prefWidth="775.0" />
+            <Separator layoutX="47.0" layoutY="79.0" prefHeight="8.0" prefWidth="775.0" />
+            <Label layoutX="47.0" layoutY="14.0" prefHeight="54.0" prefWidth="299.0" text="Call us: +1 (844) 123 456 78&#10;info@demolink.org" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="viewDockListButton" layoutX="48.0" layoutY="97.0" mnemonicParsing="false" onAction="#viewDockListButtonClicked" prefHeight="90.0" prefWidth="391.0" style="-fx-effect: #e6dfdf;" text="View Dock List">
+               <font>
+                  <Font name="Broadway" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="viewRentingBikeButton" layoutX="441.0" layoutY="97.0" mnemonicParsing="false" onAction="#viewRentingBikeButtonClicked" prefHeight="90.0" prefWidth="381.0" style="-fx-cursor: #e6dfdf;" text="View Renting Bike">
+               <font>
+                  <Font name="Broadway" size="22.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
