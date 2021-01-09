@@ -1,3 +1,4 @@
+# Đã sửa sau khi báo cáo
 # Phần mềm thuê xe Bike Rental - Thiết kế và cài đặt bởi nhóm 10
 
 Các thành viên trong nhóm
@@ -46,3 +47,7 @@ Nếu không muốn build lại project, người dùng có thể chạy ứng d
 `java -jar --module-path "path-to-lib\javafx-sdk-window-11.0.2\lib" --add-modules=javafx.controls,javafx.graphics,javafx.fxml,javafx.base  BikeGUI/out/artifacts/BikeGUI_jar/BikeGUI.jar`
 
 (Sửa `path-to-lib\javafx-sdk-window-11.0.2\lib` trỏ đến thư viện JavaFX máy người dùng)
+
+# Các phần đã sửa sau khi báo cáo
+Chúng em đã sửa code, slide và các tài liệu.
+Chúng em đã sửa và áp dụng strategy pattern vào các module tính toán tiền và thời gian

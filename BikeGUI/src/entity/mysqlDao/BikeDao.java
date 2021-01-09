@@ -7,7 +7,10 @@ import java.util.List;
 
 import database.DAO;
 import database.MySQLDriver;
+import entity.Bicycle;
 import entity.Bike;
+import entity.ElectricBike;
+import entity.Tandem;
 import log.LogManager;
 
 /**
@@ -24,15 +27,23 @@ public class BikeDao implements DAO<Bike>{
 	}
 	
 	private Bike extractBike(ResultSet res) throws SQLException {
-		Bike bike = new Bike();
 		int i = 0;
-		bike.setId(res.getInt(++i));
-		bike.setType(res.getInt(++i));
-		bike.setPin(res.getInt(++i));
-//		bike.setDeposit(res.getInt(++i));
-		bike.setValue(res.getInt(++i));
-		bike.setDockId(res.getInt(++i));
-		bike.setBarcode(res.getNString(++i));
+		int id = res.getInt(++i);
+		int type = res.getInt(++i);
+		int pin = res.getInt(++i);
+		int value = res.getInt(++i);
+		int dockId = res.getInt(++i);
+		String barcode = res.getNString(++i);
+
+		Bike bike = null;
+		if (type == 0) {
+			bike = new Bicycle(id, type, value, dockId, barcode);
+		} else if (type == 1) {
+			bike = new ElectricBike(id, type, value, dockId, barcode, pin);
+			((ElectricBike) bike).setPin(res.getInt(++i));
+		} else if (type == 2) {
+			bike = new Tandem(id, type, value, dockId, barcode);
+		}
 		return bike;
 	}
 	

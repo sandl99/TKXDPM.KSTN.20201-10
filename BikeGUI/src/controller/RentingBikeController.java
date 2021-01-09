@@ -1,5 +1,8 @@
 package controller;
 
+import controller.calculateMoney.Calculator;
+import controller.calculateMoney.CalculatorNormal;
+import controller.calculateTotalTime.Timer;
 import entity.*;
 import exception.PaymentException;
 import log.LogManager;
@@ -17,7 +20,8 @@ public class RentingBikeController {
     private PaymentController paymentController;
     private ReturnBikeController returnBikeController;
 
-    private static long startTime;
+    private static Timer timer;
+    private static Calculator calculator;
 
     /**
      * Constructor with {@link controller.DockInfoController}
@@ -84,7 +88,8 @@ public class RentingBikeController {
 //        System.out.println("S");
         LogManager.log.info("Starting Transaction ...");
         PaymentTransaction paymentTransaction = paymentController.pay(transaction);
-        startTime = System.currentTimeMillis();
+        timer = new Timer(System.currentTimeMillis());
+        calculator = new Calculator(new CalculatorNormal());
     }
 
     /***
@@ -92,29 +97,16 @@ public class RentingBikeController {
      * @return a long number describe time using bike
      */
     public long getTimeUsing() {
-        long t = System.currentTimeMillis();
-        System.out.println(startTime + " "+ t + " " + ((t - startTime)/ 1000));
-        return (t - startTime)/ 1000;
+        return timer.getTimeUsing();
     }
 
     /**
      * method calculate the total money for user
-     * @param t time at current for using bike
+     * @param totalTime time at current for using bike
      * @return total money
      */
-    public int getTotal(long t) {
-//        long t = getTimeUsing();
-//        long t = 1801;
-        this.getTransaction().setTotalTime((int) t);
-//        long t = 2100;
-        if (t <= 600) {
-            return 0;
-        } else if (t <= 900) {
-            return 10000;
-        }
-        t /= 60;
-        double numT = ((double) t) / 15;
-        return 10000 + 3000 * ((int)Math.ceil(numT));
+    public int getTotal(long totalTime) {
+        return calculator.getTotal(totalTime);
     }
 
 }
