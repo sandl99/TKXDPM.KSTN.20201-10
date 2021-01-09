@@ -75,7 +75,7 @@ public class RentingDetailBoundary implements Initializable {
         Bike bike = rentingBikeController.getTransaction().getBike();
         User user = rentingBikeController.getTransaction().getUser();
         this.name.setText(user.getName());
-        this.pin.setText(bike.getPin() + "%");
+        this.pin.setText("95%");
         this.bikeId.setText("Bike " + bike.getId());
         this.deposit.setText(bike.getDeposit() + " VND");
         this.time.setText(getDurationString((int) rentingBikeController.getTimeUsing()));

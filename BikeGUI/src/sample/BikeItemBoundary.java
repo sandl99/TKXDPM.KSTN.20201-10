@@ -40,7 +40,7 @@ public class BikeItemBoundary implements Initializable {
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.id.setText("Bike " + bike.getId());
 		this.address.setText(dock.getAddress());
-		this.pin.setProgress(bike.getPin());
+		this.pin.setProgress(100);
 	}
 
 	/**

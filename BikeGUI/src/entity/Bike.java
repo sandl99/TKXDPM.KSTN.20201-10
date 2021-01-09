@@ -5,10 +5,10 @@ package entity;
  * @author Group 10
  */
 
-public class Bike {
+public abstract class Bike {
 	private int id;
 	private int type;
-	private int pin;
+//	private int pin;
 //	private int deposit;
 	private int value;
 	private int dockId;
@@ -18,15 +18,15 @@ public class Bike {
 	
 	@Override
 	public String toString() {
-		return "Bike [id=" + id + ", type=" + type + ", pin=" + pin  + ", value=" + value
+		return "Bike [id=" + id + ", type=" + type +  ", value=" + value
 				+ ", dockId=" + dockId + ", barcode=" + barcode + "]";
 	}
 
-	public Bike(int id, int type, int pin, int value, int dockId, String barcode) {
+	public Bike(int id, int type, int value, int dockId, String barcode) {
 		super();
 		this.id = id;
 		this.type = type;
-		this.pin = pin;
+//		this.pin = pin;
 //		this.deposit = deposit;
 		this.value = value;
 		this.dockId = dockId;
@@ -49,20 +49,12 @@ public class Bike {
 		this.type = type;
 	}
 	
-	public int getPin() {
-		return pin;
-	}
-	
-	public void setPin(int pin) {
-		this.pin = pin;
-	}
-	
-//	public int getDeposit() {
-//		return deposit;
+//	public int getPin() {
+//		return pin;
 //	}
 //
-//	public void setDeposit(int deposit) {
-//		this.deposit = deposit;
+//	public void setPin(int pin) {
+//		this.pin = pin;
 //	}
 	
 	public int getValue() {
@@ -93,12 +85,5 @@ public class Bike {
 		return this.value * 40 / 100;
 	}
 
-	public String getTypeString() {
-		if (this.getType() == 0)
-			return "Normal Bike";
-		else if (this.getType() == 1)
-			return "Electric Bike";
-		else
-			return "Tandem Bike";
-	}
+	public abstract String getTypeString();
 }
